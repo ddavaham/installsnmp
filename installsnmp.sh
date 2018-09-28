@@ -111,7 +111,7 @@ then
 	else
 	echo "<==SNMP ALREADY PRESENT==>"
 	fi
-elif [ "$OS" == "Red Hat Enterprise Linux" ] && [ "$VER" <= 6 ]
+elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" <= 6 ]
 then
 	echo "<==RHEL, CENTOS DETECTED==>"
 	echo "<==VERIFY SNMP INSTALL==>"
@@ -123,7 +123,7 @@ then
 	else
 	echo "<==SNMP ALREADY PRESENT==>"
 	fi
-elif [ "$OS" == "Red Hat Enterprise Linux" ] && [ "$VER" > 6 ]
+elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" > 6 ]
 then
 	echo "<==RHEL, CENTOS DETECTED==>"
 	echo "<==VERIFY SNMP INSTALL==>"
@@ -189,10 +189,10 @@ then
 elif [ "$OS" == "CentOS Linux" ] && [ "$VER" < 6 ]
 then
 	sudo service restart snmpd
-elif [ "$OS" == "Red Hat Enterprise Linux" ] && [ "$VER" <= 6 ]
+elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" <= 6 ]
 then
 	sudo service restart snmpd
-elif [ "$OS" == "Red Hat Enterprise Linux" ] && [ "$VER" > 6 ]
+elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" > 6 ]
 then	
 	sudo systemctl restart snmpd
 elif [ "$OS" == "Ubuntu" ]
@@ -208,10 +208,10 @@ then
 elif [ "$OS" == "CentOS Linux" ] && [ "$VER" < 6 ]
 then
 	sudo service enable snmpd
-elif [ "$OS" == "Red Hat Enterprise Linux" ] && [ "$VER" <= 6 ]
+elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" <= 6 ]
 then
 	sudo service enable snmpd
-elif [ "$OS" == "Red Hat Enterprise Linux" ] && [ "$VER" > 6 ]
+elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" > 6 ]
 then	
 	sudo systemctl enable snmpd
 elif [ "$OS" == "Ubuntu" ]
