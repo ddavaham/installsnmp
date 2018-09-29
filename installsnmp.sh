@@ -186,12 +186,12 @@ echo "<==RESTARTING SNMP SERVICES==>"
 if [ "$OS" == "CentOS Linux" ] && [ "$VER" > 6 ]
 then
 	sudo systemctl restart snmpd
-elif [ "$OS" == "CentOS Linux" ] && [ "$VER" < 6 ]
+elif [ "$OS" == "CentOS Linux" ] && [ "$VER" <= 6 ]
 then
-	sudo service restart snmpd
+	sudo service snmpd restart
 elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" <= 6 ]
 then
-	sudo service restart snmpd
+	sudo service snmpd restart
 elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" > 6 ]
 then	
 	sudo systemctl restart snmpd
@@ -205,12 +205,12 @@ echo "<==SETTING SNMP TO START ON BOOT==>"
 if [ "$OS" == "CentOS Linux" ] && [ "$VER" > 6 ]
 then
 	sudo systemctl enable snmpd
-elif [ "$OS" == "CentOS Linux" ] && [ "$VER" < 6 ]
+elif [ "$OS" == "CentOS Linux" ] && [ "$VER" <= 6 ]
 then
-	sudo service enable snmpd
+	sudo chkconfig snmpd on
 elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" <= 6 ]
 then
-	sudo service enable snmpd
+	sudo chkconfig snmpd on
 elif [ "$OS" == "RedHatEnterpriseServer" ] && [ "$VER" > 6 ]
 then	
 	sudo systemctl enable snmpd
